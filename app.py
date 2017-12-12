@@ -54,6 +54,9 @@ def real_time(transportation):
     elif transportation == 'bus':
         sl.bus = True
         sl.site_id = get_site_id('bus') 
+    elif transportation == 'train':
+        sl.train = True
+        sl.site_id = get_site_id('metro') 
     else:
         speech_text = "Sorry I didn't catch what you asked for there, which transporatation did you want to go with. Bus or Metro?"
         return question(speech_text).reprompt(speech_text).simple_card('SL', speech_text)
@@ -70,6 +73,9 @@ def deviation(transportation):
     elif transportation == 'bus':
         sl.bus = True
         sl.site_id = get_site_id('bus') 
+    elif transportation == 'train':
+        sl.train = True
+        sl.site_id = get_site_id('metro') 
     else:
         speech_text = "Sorry I didn't catch which transportation you wanted there."
         return statement(speech_text).simple_card('SL', speech_text)
