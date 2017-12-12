@@ -84,9 +84,9 @@ def deviation(transportation):
     result, deviations = sl.simple_list()
     speech_text, card_text = _generate_deviation(deviations)
 
-    translator = Translator()
+    
 
-    speech_text = '<speak>' + sppech_text + '</speak>'
+    speech_text = '<speak>' + speech_text + '</speak>'
 
     return statement(speech_text).simple_card('SL', card_text)
 
