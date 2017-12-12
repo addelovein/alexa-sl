@@ -21,6 +21,7 @@ ask = Ask(app, "/")
 logging.getLogger('flask_ask').setLevel(logging.DEBUG)
 sl = SL(os.environ['SL_API_KEY'])
 tts_host = os.environ.get('TTS_HOST')
+translator = Translator()
 
 def get_site_id(transporatation):
     return os.environ.get('SL_%s_SITE_ID' % transporatation.upper())
@@ -28,7 +29,7 @@ def get_site_id(transporatation):
 
 @ask.launch
 def launch():
-    speech_text = 'Bus or Metro?'
+    speech_text = 'Bus, Train or Metro?'
     return question(speech_text).reprompt(speech_text).simple_card('SL', speech_text)
 
 
