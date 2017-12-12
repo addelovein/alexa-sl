@@ -38,7 +38,7 @@ def real_time_city(transportation):
     sl.reset_filter()
     if transportation in ('train'):
         sl.metro = True
-        sl.journey_direction = 1
+        sl.journey_direction = 2
         sl.site_id = get_site_id('metro')
     else:
         speech_text = "I only support train with this quetion"
