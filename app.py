@@ -5,6 +5,7 @@ from flask import Flask
 from flask_ask import Ask, request, session, question, statement
 from werkzeug.contrib.fixers import ProxyFix
 from unidecode import unidecode
+from googletrans import Translator
 import logging
 from sl import SL
 
@@ -83,7 +84,9 @@ def deviation(transportation):
     result, deviations = sl.simple_list()
     speech_text, card_text = _generate_deviation(deviations)
 
-    speech_text = '<speak>' + speech_text + '</speak>'
+    translator = Translator()
+
+    speech_text = '<speak>' + translator.translate(speech_text) + '</speak>'
 
     return statement(speech_text).simple_card('SL', card_text)
 
