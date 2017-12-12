@@ -36,12 +36,12 @@ def launch():
 @ask.intent('SLRealTimeCityIntent')
 def real_time_city(transportation):
     sl.reset_filter()
-    if transportation in ('metro', 'subway'):
+    if transportation in ('train'):
         sl.metro = True
         sl.journey_direction = 1
         sl.site_id = get_site_id('metro')
     else:
-        speech_text = "I only support metro with this quetion"
+        speech_text = "I only support train with this quetion"
         return statement(speech_text).simple_card('SL', speech_text)
 
     return _generate_answer(transportation)
