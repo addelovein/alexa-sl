@@ -37,7 +37,7 @@ def launch():
 def real_time_city(transportation):
     sl.reset_filter()
     if transportation in ('train'):
-        sl.metro = True
+        sl.train = True
         sl.journey_direction = 2
         sl.site_id = get_site_id('metro')
     else:
