@@ -86,7 +86,7 @@ def deviation(transportation):
 
     translator = Translator()
 
-    speech_text = '<speak>' + translator.translate(speech_text) + '</speak>'
+    speech_text = '<speak>' + sppech_text + '</speak>'
 
     return statement(speech_text).simple_card('SL', card_text)
 
